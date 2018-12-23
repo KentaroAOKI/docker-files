@@ -9,7 +9,7 @@ RUN buildDeps='make libc6-dev gcc g++' \
     && /mecab-ipadic-neologd/bin/install-mecab-ipadic-neologd -n -y \
     && export VAL=`mecab-config --dicdir`/mecab-ipadic-neologd; sed -i 's#^\(dicdir\s*=\s*\).*$#\1'$VAL'#' /etc/mecabrc \
     && echo 'Installing Tika' \
-    && apt-get -y install openjdk-7-jre-headless tesseract-ocr tesseract-ocr-eng tesseract-ocr-jpn \
+    && apt-get -y install openjdk-8-jre-headless tesseract-ocr tesseract-ocr-eng tesseract-ocr-jpn \
     && curl --output /tmp/tika-server.jar http://search.maven.org/remotecontent?filepath=org/apache/tika/tika-server/1.16/tika-server-1.16.jar \
     && curl --output /tmp/tika-server.jar.md5 http://search.maven.org/remotecontent?filepath=org/apache/tika/tika-server/1.16/tika-server-1.16.jar.md5 \
     && echo 'Installing Python' \
