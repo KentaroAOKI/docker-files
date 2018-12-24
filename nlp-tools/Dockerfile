@@ -13,6 +13,7 @@ RUN buildDeps='make libc6-dev gcc g++' \
     && curl --output /tmp/tika-server.jar http://search.maven.org/remotecontent?filepath=org/apache/tika/tika-server/1.16/tika-server-1.16.jar \
     && curl --output /tmp/tika-server.jar.md5 http://search.maven.org/remotecontent?filepath=org/apache/tika/tika-server/1.16/tika-server-1.16.jar.md5 \
     && echo 'Installing Python' \
+    && apt-get install -y swig \
     && conda update -y -n base conda \
     && conda install -y -c anaconda gensim requests nltk \
     && conda install -y -c conda-forge tika \
